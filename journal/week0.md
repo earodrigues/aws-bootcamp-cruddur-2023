@@ -24,3 +24,7 @@ I didn't create a second budget because I don't have credits applied
 ### CI/CD Logical Diagram
 ![cicd-diagram](https://user-images.githubusercontent.com/124768576/219776846-3cfcc364-6c31-4911-8f75-1cdc11cdf3c1.png)
 [CI/CD Lucid Chart shared link](https://lucid.app/lucidchart/75ec75ef-858c-4dd7-b91b-1ef1ae9ad403/edit?viewport_loc=-11%2C-173%2C2219%2C1097%2C0_0&invitationId=inv_ae1fe94d-3821-4b1f-9c77-9f85210f73ec)
+
+### Use EventBridge to hookup Health Dashboard to SNS
+![event bridge](https://user-images.githubusercontent.com/124768576/219793654-75aa161c-038b-446c-a6f5-819ca244a893.png)
+
