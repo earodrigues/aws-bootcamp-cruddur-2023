@@ -18,5 +18,6 @@ I was able to run the dockerfile CMD as an external script but I had to change i
 ### Push and tag an image to DockerHub
 I build a new image for the backend in my repo and I was able to push it and tag it
 
+[My DockerHub repo](https://hub.docker.com/repository/docker/earodrigues/backend-flask/general)
 ![dockerhub](https://user-images.githubusercontent.com/124768576/220429338-1a5a9609-0572-47c0-b47f-515444587721.png)
 
