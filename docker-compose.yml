@@ -2,7 +2,8 @@ version: "3.8"
 services:
   backend-flask:
     environment:
-      CONNECTION_URL: "${PROD_CONNECTION_URL}"
+      #CONNECTION_URL: "${PROD_CONNECTION_URL}"
+      CONNECTION_URL: "postgresql://postgres:password@db:5432/cruddur"
       FRONTEND_URL: "https://3000-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
       BACKEND_URL: "https://4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
       OTEL_SERVICE_NAME: 'backend-flask'
@@ -11,7 +12,7 @@ services:
       AWS_XRAY_URL: "*4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}*"
       AWS_XRAY_DAEMON_ADDRESS: "xray-daemon:2000"
       AWS_DEFAULT_REGION: "${AWS_DEFAULT_REGION}"
-      AWS_COGNITO_USER_POOL_ID: "eu-west-1_TUFSIMo0o"
+      AWS_COGNITO_USER_POOL_ID: "${AWS_COGNITO_USER_POOL_ID}"
       AWS_COGNITO_USER_POOL_CLIENT_ID: "4crrd4lm5n9s198bb6rh4kpsj9" 
     build: ./backend-flask
     ports:
