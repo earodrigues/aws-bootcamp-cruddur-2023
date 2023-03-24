@@ -14,7 +14,7 @@ from services.messages import *
 from services.create_message import *
 from services.show_activity import *
 
-# from lib.cognito_jwt_token import CognitoJwtToken, extract_access_token, TokenVerifyError
+from lib.cognito_jwt_token import CognitoJwtToken, extract_access_token, TokenVerifyError
 from middleware.auth_middleware import token_required
 
 # HoneyComb ---------
@@ -50,11 +50,11 @@ tracer = trace.get_tracer(__name__)
 
 app = Flask(__name__)
 
-# cognito_jwt_token = CognitoJwtToken(
-#   user_pool_id=os.getenv("AWS_COGNITO_USER_POOL_ID"), 
-#   user_pool_client_id=os.getenv("AWS_COGNITO_USER_POOL_CLIENT_ID"),
-#   region=os.getenv("AWS_DEFAULT_REGION")
-# )
+cognito_jwt_token = CognitoJwtToken(
+  user_pool_id=os.getenv("AWS_COGNITO_USER_POOL_ID"), 
+  user_pool_client_id=os.getenv("AWS_COGNITO_USER_POOL_CLIENT_ID"),
+  region=os.getenv("AWS_DEFAULT_REGION")
+)
 
 # X-RAY ----------
 XRayMiddleware(app, xray_recorder)
