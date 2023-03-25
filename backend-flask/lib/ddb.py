@@ -16,7 +16,13 @@ class Ddb:
         'aws_secret_access_key': 'test'
       }
     else:
-      attrs = {}
+      attrs = {
+        'region_name': os.getenv("AWS_DEFAULT_REGION"),
+        'aws_access_key_id': os.getenv("AWS_ACCESS_KEY_ID"),
+        'aws_secret_access_key': os.getenv("AWS_SECRET_ACCESS_KEY")
+      }
+    print('attrs-----------')
+    print(attrs)
     dynamodb = boto3.client('dynamodb',**attrs)
     return dynamodb
   def list_message_groups(client,my_user_uuid):
