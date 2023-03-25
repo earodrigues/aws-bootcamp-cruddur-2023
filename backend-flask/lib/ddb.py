@@ -9,7 +9,12 @@ class Ddb:
   def client():
     endpoint_url = os.getenv("AWS_ENDPOINT_URL")
     if endpoint_url:
-      attrs = { 'endpoint_url': endpoint_url }
+      attrs = { 
+        'endpoint_url': endpoint_url,
+        'region_name': 'local',
+        'aws_access_key_id': 'test',
+        'aws_secret_access_key': 'test'
+      }
     else:
       attrs = {}
     dynamodb = boto3.client('dynamodb',**attrs)
@@ -28,7 +33,6 @@ class Ddb:
       }
     }
     print('query-params:',query_params)
-    print(query_params)
     # query the table
     response = client.query(**query_params)
     items = response['Items']
