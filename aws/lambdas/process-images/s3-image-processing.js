@@ -12,7 +12,7 @@ async function getOriginalImage(client,srcBucket,srcKey){
     Bucket: srcBucket,
     Key: srcKey
   };
-  console.log('params',params)
+  console.log('paramsxxx',params)
   const command = new GetObjectCommand(params);
   const response = await client.send(command);
 
